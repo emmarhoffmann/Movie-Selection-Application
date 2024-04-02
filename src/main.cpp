@@ -1,39 +1,30 @@
-// Copyright (C) 2021 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
-
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include "CReadFile.h"
+#include "CFantasyMovies.h"
 
-#include "app_environment.h"
-#include "import_qml_components_plugins.h"
-#include "import_qml_plugins.h"
-
-int main(int argc, char *argv[])
-{
-    set_qt_environment();
-
+int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
 
+    // Create application engine
     QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/qt/qml/Main/main.qml"_qs);
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [url](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl)
-                QCoreApplication::exit(-1);
-        },
-        Qt::QueuedConnection);
 
-    engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
-    engine.addImportPath(":/");
+    // Read input file and populate stacks
+    CReadFile readFile;
+    readFile.readFile(); // Populate the stacks on startup
 
-    engine.load(url);
+    // Set stacks in CFantasyMovies
+    CFantasyMovies fantasyMovies;
+    fantasyMovies.setStacks(readFile.getOddStack(), readFile.getEvenStack());
 
-    if (engine.rootObjects().isEmpty()) {
+    // Expose the CFantasyMovies object to QML
+    engine.rootContext()->setContextProperty("fantasyMovies", &fantasyMovies);
+
+    // Load GUI QML file
+    engine.load(QUrl(QStringLiteral("qrc:/EvenOrOdd.qml")));
+    if (engine.rootObjects().isEmpty())
         return -1;
-    }
 
     return app.exec();
 }
