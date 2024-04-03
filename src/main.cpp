@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     engine.rootContext()->setContextProperty("fantasyMovies", &fantasyMovies);
 
     // Load GUI QML file
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:qt/qml/Main/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 
