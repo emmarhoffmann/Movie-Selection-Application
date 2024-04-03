@@ -17,3 +17,4 @@ public:
 private:
     std::mt19937 generator;  // Standard mersenne_twister_engine seeded with rd()
 };
+#endif // CRANDOM_H
