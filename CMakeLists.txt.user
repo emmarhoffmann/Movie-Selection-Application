@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 12.0.2, 2024-04-02T11:16:51. -->
+<!-- Written by QtCreator 12.0.2, 2024-04-03T08:43:24. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -109,7 +109,7 @@
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}</value>
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\Emma Hoffmann\OneDrive\SCHOOL - SPRING 24\CSCI 300\build-MovieNight-Desktop_Qt_6_6_2_MinGW_64_bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\Emma Hoffmann\OneDrive\SCHOOL - SPRING 24\CSCI 300</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -395,11 +395,12 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">MovieNightApp</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.MovieNightApp</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">MovieNightApp</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/Emma Hoffmann/OneDrive/SCHOOL - SPRING 24/CSCI 300/build-MovieNight-Desktop_Qt_6_6_2_MinGW_64_bit-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory">C:/Users/Emma Hoffmann/OneDrive/SCHOOL - SPRING 24/CSCI 300/MovieNight/src</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/Emma Hoffmann/OneDrive/SCHOOL - SPRING 24/CSCI 300</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
