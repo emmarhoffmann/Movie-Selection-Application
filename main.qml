@@ -13,10 +13,27 @@ ApplicationWindow {
         text: "X"
         anchors.top: parent.top
         anchors.right: parent.right
-        anchors.topMargin: 10
-        anchors.rightMargin: 10
+        anchors.topMargin: 5
+        anchors.rightMargin: 5
+        width: 20
+        height: 40
+
+        background: Rectangle {
+            color: button.pressed ? "lightgray" : "transparent"
+            radius: 20
+        }
+
         onClicked: {
             close()
+        }
+
+        contentItem: Text {
+            text: parent.text
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            anchors.fill: parent
+            font: button.font
         }
     }
 
@@ -46,9 +63,21 @@ ApplicationWindow {
         TextField {
             id: numberInput
             width: parent.width * 0.8
-            placeholderText: qsTr("Number")
             horizontalAlignment: Text.AlignHCenter
             anchors.horizontalCenter: parent.horizontalCenter
+
+            cursorDelegate: Rectangle {
+                color: "grey"
+                width: 2
+                visible: parent.cursorVisible
+            }
+
+            background: Rectangle {
+                color: "white"
+                border.width: 1
+                border.color: numberInput.activeFocus ? "#0078d7" : "#cccccc"
+                radius: 2
+            }
         }
 
         // Order button
